@@ -1,7 +1,7 @@
 /*!
  * ui-select
  * http://github.com/angular-ui/ui-select
- * Version: 0.12.0 - 2015-06-11T08:07:53.464Z
+ * Version: 0.12.1 - 2015-07-16T10:08:39.353Z
  * License: MIT
  */
 
@@ -1144,9 +1144,7 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
       };
 
       ctrl.getPlaceholder = function(){
-        // In multiple it is an array
-        // In single - any truthy
-        if($select.selected) return;
+        if(angular.isArray($select.selected) && $select.selected.length) return;
         return $select.placeholder;
       };
 

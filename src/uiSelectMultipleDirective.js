@@ -55,9 +55,7 @@ uis.directive('uiSelectMultiple', ['uiSelectMinErr','$timeout', function(uiSelec
       };
 
       ctrl.getPlaceholder = function(){
-        // In multiple it is an array
-        // In single - any truthy
-        if($select.selected) return;
+        if(angular.isArray($select.selected) && $select.selected.length) return;
         return $select.placeholder;
       };
 
